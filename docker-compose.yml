@@ -2,8 +2,10 @@ version: '3'
 services:
     redis:
         image: redis:latest
-        ports:
-            - 6379:6379
-        volumes:
-            - ./config/redis.conf:/redis.conf
-        command: [ "redis-server", "/redis.conf" ]
+
+    dash_trace_v3_redis:
+        image: 979711578039.dkr.ecr.us-east-2.amazonaws.com/dash_trace_v3_redis:latest
+        depends_on: 
+            - redis
+        ports: 
+            - 8051:8050
