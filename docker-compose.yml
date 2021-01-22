@@ -6,4 +6,10 @@ services:
             - 6379:6379
         volumes:
             - ./config/redis.conf:/redis.conf
+            - $PWD/redis-data:/app/dash_trace_v3_redis/cached_files
         command: [ "redis-server", "/redis.conf" ]
+    dash_trace_v3_redis:
+        image: 979711578039.dkr.ecr.us-east-2.amazonaws.com/dash_trace_v3_redis:latest
+        ports: 
+            - 8051:8050
+        
