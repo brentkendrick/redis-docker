@@ -8,4 +8,8 @@ services:
         depends_on: 
             - redis
         ports: 
+<<<<<<< HEAD
             - 8051:8050
+=======
+            - 8051:8050
+>>>>>>> 56bd3323c83ab7544e654dad9a5fc5633739cbbc
